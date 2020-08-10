@@ -1,0 +1,238 @@
+// Media mixins
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin button-primary {
+  background-color: $base-white;
+  color: $base-black;
+  @include white-border;
+}
+@mixin button-secondary {
+  background-color: transparent;
+  color: $base-white;
+  @include white-border;
+}
+@mixin white-border {
+  border: 8px solid $base-white;
+}
+
+// Variables
+$base-black: #191b1e;
+$base-white: #d9dadb;
+
+// General element styles
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: $base-white;
+  background: $base-black;
+  background: center / cover no-repeat
+    url("img/dark-paper-texture-high-res.jpg");
+}
+button {
+  font-size: 2vh;
+  font-family: "Roboto", Sans-Serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1vh 1.2vh;
+  border-radius: 12px;
+
+  &.button-primary {
+    @include button-primary;
+  }
+  &.button-secondary {
+    @include button-secondary;
+  }
+}
+h1,
+h2,
+h3 {
+  font-family: "Roboto", Sans-Serif;
+  line-height: 3vh;
+  margin: 1vh 0;
+}
+h1 {
+  font-size: 4.8vh;
+  line-height: 5vh;
+}
+h2 {
+  font-size: 3.6vh;
+}
+h3 {
+  font-size: 3vh;
+}
+hr {
+  margin-bottom: 0.75vh;
+  border: 2px solid #d9dadb;
+}
+p {
+  font-family: "Droid Serif", Serif;
+  line-height: 3vh;
+  font-size: 2.4vh;
+  margin: 2vh 0;
+}
+
+.social-container {
+  margin-top: 2vh;
+  text-align: right;
+  i {
+    margin: 1vh;
+    @include for-tablet-portrait-up {
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    &::before {
+      font-size: 4vh;
+      vertical-align: middle;
+    }
+  }
+  .ks-logo {
+    display: none;
+    max-height: 8vh;
+    margin-left: 1vh;
+    vertical-align: middle;
+  }
+}
+
+// Home styles
+#main {
+  margin: 4vh;
+  @include for-phone-only {
+    margin: 0;
+  }
+  // Full grid container
+  .home-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 4vh; //Maybe this should just be vh to match section margin
+    @include for-phone-only {
+      grid-template-columns: 1fr;
+      grid-template-rows: 2fr 1fr 1fr 1fr;
+      gap: 0;
+    }
+    // Grid columns
+    .home-block {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      &.feat-block {
+        background-image: linear-gradient(
+            to bottom,
+            rgba(26, 27, 29, 1),
+            rgba(26, 27, 29, 0.15)
+          ),
+          url("img/marc-fanelli-isla-xo4ValczbuA-unsplash.jpg");
+        background-position: center bottom;
+        i {
+          position: absolute;
+          top: 2vh;
+          right: 2vh;
+          &::before {
+            font-size: 4vh;
+          }
+        }
+        .block-blurb {
+          padding: 4vh 4vh 0 4vh;
+          @include for-phone-only {
+            padding-top: 8vh;
+          }
+        }
+      }
+      .block-blurb {
+        padding: 4vh 4vh 2vh 4vh;
+      }
+      .block-cover {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: opacity 1s;
+        h2 {
+          position: absolute;
+          top: 45%;
+          left: 4vh;
+          margin: 0;
+          transition: transform 2s, opacity 2s;
+          @include for-phone-only {
+            top: 82%;
+          }
+        }
+        &.recording-cover {
+          background-image: linear-gradient(
+              to right,
+              rgba(26, 27, 29, 0.95),
+              rgba(0, 0, 0, 0)
+            ),
+            url("img/jonathan-velasquez-c1ZN57GfDB0-unsplash.jpg");
+        }
+        &.rehearsal-cover {
+          background-image: linear-gradient(
+              to right,
+              rgba(26, 27, 29, 0.95),
+              rgba(0, 0, 0, 0)
+            ),
+            url("img/karim-boubker-inCiuLNuwdw-unsplash.jpg");
+          background-position: center bottom;
+        }
+        &.live-cover {
+          background-image: linear-gradient(
+              to right,
+              rgba(26, 27, 29, 0.95),
+              rgba(0, 0, 0, 0)
+            ),
+            url("img/yassine-khalfalli-I3ZzOkiAbTI-unsplash.jpg");
+        }
+        &:hover {
+          opacity: 0.3;
+          transition: opacity 1.2s;
+          h2 {
+            // display: none;
+            transform: translate(0, -360px);
+            opacity: 0;
+            transition: transform 1s, opacity 0.5s;
+          }
+        }
+      }
+      &.feat-block {
+        grid-row-start: 1;
+        grid-row-end: 4;
+        @include for-phone-only {
+          grid-row-end: 2;
+        }
+      }
+    }
+  }
+}
+
+/* background to white 1f2225 3f4144 616366 86888a adaeaf d5d6d6 ffffff */
+/* background to black */
