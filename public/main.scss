@@ -73,12 +73,10 @@ h1,
 h2,
 h3 {
   font-family: "Roboto", Sans-Serif;
-  line-height: 3vh;
   margin: 1vh 0;
 }
 h1 {
   font-size: 4.8vh;
-  line-height: 5vh;
 }
 h2 {
   font-size: 3.6vh;
@@ -179,7 +177,7 @@ p {
         transition: opacity 1s;
         h2 {
           position: absolute;
-          top: 45%;
+          top: 44%;
           left: 4vh;
           margin: 0;
           transition: transform 2s, opacity 2s;
@@ -231,6 +229,81 @@ p {
         }
       }
     }
+  }
+}
+
+#form {
+  margin: 4vh;
+
+  form {
+    padding: 2vh 0;
+    input,
+    label,
+    select {
+      font-family: "Roboto", Sans-Serif;
+      font-size: 2.4vh;
+      font-weight: 700;
+      border: 0;
+      padding: 1vh;
+      vertical-align: top;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="tel"],
+    select {
+      background-color: transparent;
+      border-bottom: 2px solid $base-white;
+      color: $base-white;
+      margin-right: 4vh;
+      // option {
+      //   font-size: 1vh;
+      // }
+    }
+
+    // .checkbox {
+    //   appearance: none;
+    //   -webkit-appearance: none;
+    //   border: 2px solid $base-white;
+    //   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    //     inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    //   padding: 1vh;
+    //   margin-left: 1vh;
+    //   margin-right: 1vh;
+    //   border-radius: 3px;
+    //   display: inline-block;
+    //   position: relative;
+    // }
+    // .checkbox:active,
+    // .checkbox:checked:active {
+    //   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    //     inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+    // }
+    // .checkbox:checked {
+    //   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+    //     inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
+    //     inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    //   color: #99a1a7;
+    // }
+    // .checkbox:checked:after {
+    //   content: "\2714";
+    //   font-size: 4vh;
+    //   position: absolute;
+    //   top: -28px;
+    //   left: 3px;
+    //   color: $base-white;
+    // }
+    // .form-block {
+    //   display: inline-block;
+    //   vertical-align: top;
+    //   h3 {
+    //     font-size: 2.4vh;
+    //     padding: 1vh;
+    //     margin: 0;
+    //   }
+    // }
+    // .button-container {
+    //   padding: 1vh;
+    // }
   }
 }
 

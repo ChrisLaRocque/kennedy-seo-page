@@ -34,13 +34,11 @@ h1,
 h2,
 h3 {
   font-family: "Roboto", Sans-Serif;
-  line-height: 3vh;
   margin: 1vh 0;
 }
 
 h1 {
   font-size: 4.8vh;
-  line-height: 5vh;
 }
 
 h2 {
@@ -170,7 +168,7 @@ p {
 
 #main .home-container .home-block .block-cover h2 {
   position: absolute;
-  top: 45%;
+  top: 44%;
   left: 4vh;
   margin: 0;
   -webkit-transition: opacity 2s, -webkit-transform 2s;
@@ -227,6 +225,35 @@ p {
   #main .home-container .home-block.feat-block {
     grid-row-end: 2;
   }
+}
+
+#form {
+  margin: 4vh;
+}
+
+#form form {
+  padding: 2vh 0;
+}
+
+#form form input,
+#form form label,
+#form form select {
+  font-family: "Roboto", Sans-Serif;
+  font-size: 2.4vh;
+  font-weight: 700;
+  border: 0;
+  padding: 1vh;
+  vertical-align: top;
+}
+
+#form form input[type="text"],
+#form form input[type="number"],
+#form form input[type="tel"],
+#form form select {
+  background-color: transparent;
+  border-bottom: 2px solid #d9dadb;
+  color: #d9dadb;
+  margin-right: 4vh;
 }
 
 /* background to white 1f2225 3f4144 616366 86888a adaeaf d5d6d6 ffffff */

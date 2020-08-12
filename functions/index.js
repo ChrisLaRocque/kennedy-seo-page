@@ -31,7 +31,7 @@ exports.emailDaddy = functions.https.onRequest(async (req, res) => {
   });
 
   var mailOptions = {
-    from: "larocque.christopher@gmail.com",
+    from: "booking@kennedystudios.productions",
     to: "larocque.christopher@gmail.com",
     subject: "Sending Email using Node.js",
     text: "That was easy!",
