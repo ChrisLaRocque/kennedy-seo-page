@@ -248,6 +248,10 @@ p {
   color: #d9dadb;
 }
 
+#form #thanks-message {
+  display: none;
+}
+
 /* background to white 1f2225 3f4144 616366 86888a adaeaf d5d6d6 ffffff */
 /* background to black */
 /*# sourceMappingURL=main.css.map */

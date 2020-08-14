@@ -2,7 +2,6 @@ const functions = require("firebase-functions");
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
-const bodyParser = require("body-parser");
 
 const oauth2Client = new OAuth2(
   "30060925460-qlfofskdvavoo1dt0lctktdd68ebao49.apps.googleusercontent.com", // ClientID
@@ -56,5 +55,7 @@ exports.emailDaddy = functions.https.onRequest(async (req, res) => {
       console.log("Email sent: " + info.response);
     }
   });
+  res.status(200);
   res.json({ result: `Ya hit me` });
+  return res;
 });
