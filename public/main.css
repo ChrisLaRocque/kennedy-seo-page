@@ -235,25 +235,17 @@ p {
   padding: 2vh 0;
 }
 
-#form form input,
-#form form label,
-#form form select {
+#form form input {
   font-family: "Roboto", Sans-Serif;
   font-size: 2.4vh;
   font-weight: 700;
+  margin-right: 4vh;
   border: 0;
   padding: 1vh;
   vertical-align: top;
-}
-
-#form form input[type="text"],
-#form form input[type="number"],
-#form form input[type="tel"],
-#form form select {
   background-color: transparent;
   border-bottom: 2px solid #d9dadb;
   color: #d9dadb;
-  margin-right: 4vh;
 }
 
 /* background to white 1f2225 3f4144 616366 86888a adaeaf d5d6d6 ffffff */
