@@ -1,7 +1,8 @@
 document
   .getElementById("form-submit")
   .addEventListener("click", function (event) {
-    var url = "http://localhost:5001/kennedy-static/us-central1/emailDaddy?";
+    var url =
+      "https://us-central1-kennedy-static.cloudfunctions.net/emailDaddy?";
     var contact = document.getElementById("contact");
     var thanks = document.getElementById("thanks-message");
     var elements = contact.elements;
