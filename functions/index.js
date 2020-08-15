@@ -70,7 +70,7 @@ exports.emailDaddy = functions.https.onRequest(async (req, res) => {
       console.log("Email sent: " + info.response);
     }
   });
-  // res.status(200);
+  res.status(200);
   res.json({ result: `Ya hit me` });
   return res;
 });
