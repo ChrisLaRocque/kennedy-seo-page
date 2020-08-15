@@ -29,10 +29,7 @@ exports.emailDaddy = functions.https.onRequest(async (req, res) => {
       accessToken: accessToken,
     },
   });
-  res.set(
-    "Access-Control-Allow-Origin",
-    "https://kennedy-static.firebaseapp.com"
-  );
+  res.set("Access-Control-Allow-Origin", "https://kennedystudios.info");
   // Get that sweet sweet user info
   var datInfo = req.query;
 

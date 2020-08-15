@@ -7,6 +7,7 @@ body {
   color: #d9dadb;
   background: #191b1e;
   background: center/cover no-repeat url("img/dark-paper-texture-high-res.jpg");
+  font-display: swap;
 }
 
 button {
@@ -59,6 +60,10 @@ p {
   line-height: 3vh;
   font-size: 2.4vh;
   margin: 2vh 0;
+}
+
+a {
+  color: inherit;
 }
 
 .social-container {
@@ -133,8 +138,8 @@ p {
 
 #main .home-container .home-block.feat-block i {
   position: absolute;
-  top: 2vh;
-  right: 2vh;
+  top: 4vh;
+  right: 4vh;
 }
 
 #main .home-container .home-block.feat-block i::before {
@@ -229,6 +234,7 @@ p {
 
 #form {
   margin: 4vh;
+  margin-top: 6vh;
 }
 
 #form form {
@@ -240,13 +246,18 @@ p {
   font-family: "Roboto", Sans-Serif;
   font-size: 2.4vh;
   font-weight: 700;
-  margin-right: 4vh;
   margin-bottom: 2vh;
   border: 0;
-  padding: 1vh;
   vertical-align: top;
   background-color: transparent;
   color: #d9dadb;
+}
+
+@media (min-width: 600px) {
+  #form form input,
+  #form form label {
+    margin-right: 4vh;
+  }
 }
 
 #form form input.button-secondary,
@@ -260,14 +271,24 @@ p {
 
 #form form input {
   border-bottom: 2px solid #d9dadb;
+  padding: 1vh;
 }
 
-#form form input {
-  border-bottom: 2px solid #d9dadb;
+@media (max-width: 599px) {
+  #form form input[type="text"],
+  #form form input[type="tel"] {
+    width: 100%;
+  }
+  #form form .button-secondary {
+    width: 100%;
+  }
+  #form form .services {
+    margin: 2vh 0;
+  }
 }
 
 #form form label {
-  padding-top: 0;
+  vertical-align: bottom;
 }
 
 #form #thanks-message {
@@ -284,6 +305,8 @@ p {
   padding: 1vh;
   margin-left: 1vh;
   margin-right: 1vh;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
   border-radius: 3px;
   display: inline-block;
   position: relative;
@@ -308,6 +331,10 @@ p {
   top: -28px;
   left: 3px;
   color: #d9dadb;
+}
+
+#form .services {
+  display: inline-block;
 }
 
 /* background to white 1f2225 3f4144 616366 86888a adaeaf d5d6d6 ffffff */

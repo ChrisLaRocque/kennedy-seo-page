@@ -53,6 +53,7 @@ body {
   background: $base-black;
   background: center / cover no-repeat
     url("img/dark-paper-texture-high-res.jpg");
+  font-display: swap;
 }
 button {
   font-size: 2vh;
@@ -94,7 +95,9 @@ p {
   font-size: 2.4vh;
   margin: 2vh 0;
 }
-
+a {
+  color: inherit;
+}
 .social-container {
   margin-top: 2vh;
   text-align: right;
@@ -130,7 +133,7 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 4vh; //Maybe this should just be vh to match section margin
+    gap: 4vh;
     @include for-phone-only {
       grid-template-columns: 1fr;
       grid-template-rows: 2fr 1fr 1fr 1fr;
@@ -151,8 +154,8 @@ p {
         background-position: center bottom;
         i {
           position: absolute;
-          top: 2vh;
-          right: 2vh;
+          top: 4vh;
+          right: 4vh;
           &::before {
             font-size: 4vh;
           }
@@ -234,6 +237,7 @@ p {
 
 #form {
   margin: 4vh;
+  margin-top: 6vh;
   form {
     padding: 2vh 0;
     input,
@@ -241,13 +245,15 @@ p {
       font-family: "Roboto", Sans-Serif;
       font-size: 2.4vh;
       font-weight: 700;
-      margin-right: 4vh;
       margin-bottom: 2vh;
       border: 0;
-      padding: 1vh;
+
       vertical-align: top;
       background-color: transparent;
       color: $base-white;
+      @include for-tablet-portrait-up {
+        margin-right: 4vh;
+      }
       &.button-secondary {
         @include button-secondary;
         border-radius: 12px;
@@ -256,12 +262,23 @@ p {
     }
     input {
       border-bottom: 2px solid $base-white;
+      padding: 1vh;
     }
-    input {
-      border-bottom: 2px solid $base-white;
+    @include for-phone-only {
+      input[type="text"],
+      input[type="tel"] {
+        width: 100%;
+      }
+      .button-secondary {
+        width: 100%;
+      }
+      .services {
+        margin: 2vh 0;
+      }
     }
+
     label {
-      padding-top: 0;
+      vertical-align: bottom;
     }
   }
   #thanks-message {
@@ -276,6 +293,8 @@ p {
     padding: 1vh;
     margin-left: 1vh;
     margin-right: 1vh;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
     border-radius: 3px;
     display: inline-block;
     position: relative;
@@ -298,6 +317,9 @@ p {
     top: -28px;
     left: 3px;
     color: $base-white;
+  }
+  .services {
+    display: inline-block;
   }
 }
 
