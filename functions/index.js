@@ -29,6 +29,10 @@ exports.emailDaddy = functions.https.onRequest(async (req, res) => {
       accessToken: accessToken,
     },
   });
+  res.set(
+    "Access-Control-Allow-Origin",
+    "https://kennedy-static.firebaseapp.com"
+  );
   // Get that sweet sweet user info
   var datInfo = req.query;
 
@@ -69,7 +73,7 @@ exports.emailDaddy = functions.https.onRequest(async (req, res) => {
       console.log("Email sent: " + info.response);
     }
   });
-  res.status(200);
+  // res.status(200);
   res.json({ result: `Ya hit me` });
   return res;
 });
