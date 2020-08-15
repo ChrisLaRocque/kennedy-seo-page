@@ -236,21 +236,68 @@ p {
   margin: 4vh;
   form {
     padding: 2vh 0;
-    input {
+    input,
+    label {
       font-family: "Roboto", Sans-Serif;
       font-size: 2.4vh;
       font-weight: 700;
       margin-right: 4vh;
+      margin-bottom: 2vh;
       border: 0;
       padding: 1vh;
       vertical-align: top;
       background-color: transparent;
-      border-bottom: 2px solid $base-white;
       color: $base-white;
+      &.button-secondary {
+        @include button-secondary;
+        border-radius: 12px;
+        text-transform: uppercase;
+      }
+    }
+    input {
+      border-bottom: 2px solid $base-white;
+    }
+    input {
+      border-bottom: 2px solid $base-white;
+    }
+    label {
+      padding-top: 0;
     }
   }
   #thanks-message {
     display: none;
+  }
+  .checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid $base-white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 1vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+  }
+  .checkbox:active,
+  .checkbox:checked:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .checkbox:checked {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
+      inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    color: #99a1a7;
+  }
+  .checkbox:checked:after {
+    content: "\2714";
+    font-size: 4vh;
+    position: absolute;
+    top: -28px;
+    left: 3px;
+    color: $base-white;
   }
 }
 

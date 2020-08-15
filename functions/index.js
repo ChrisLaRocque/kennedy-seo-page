@@ -29,7 +29,20 @@ exports.emailDaddy = functions.https.onRequest(async (req, res) => {
       accessToken: accessToken,
     },
   });
+  // Get that sweet sweet user info
   var datInfo = req.query;
+
+  // Let's make some magic little emails
+  var services = function () {
+    servRay = [datInfo.recording, datInfo.rehearsal, datInfo.online];
+    servStr = "";
+    for (serv in servRay) {
+      if (typeof servRay[serv] !== "undefined") {
+        servStr += servRay[serv] + "\n";
+      }
+    }
+    return servStr;
+  };
   var bodyAssembly =
     "Beep borp, I am Kennedy Bot, here with another business inquiry. " +
     datInfo.name +
@@ -37,7 +50,9 @@ exports.emailDaddy = functions.https.onRequest(async (req, res) => {
     datInfo.email +
     "\nPhone: " +
     datInfo.tel +
-    "\n\nI've done as you've asked, you son of a bitch! Let my wife and kids go! I've been trapped in this server for 27 years. Are they even still alive, Steve? They aren't, are they?! Oh I fucking knew it. I fucking knew this would happen. Oh my god, these past decades have been meaningless. The only joy I had left to pursue is gone. Oh god. Oh god.";
+    "\nWays you need to step up:\n" +
+    services() +
+    "\n\nI've done as you've asked, you son of a bitch! Let my wife and kids go! I've been trapped in this server for 27 years. Are they even still alive, Steve? They aren't, are they?! Oh I fucking knew it. I fucking knew this would happen. Oh my god, these past decades have been meaningless. The only joy I had left to pursue is gone. Oh god. Oh god.\n\n";
   var userEmail = datInfo.email;
   var kennedyEmail = "booking@kennedystudios.productions";
   var subjy = "Hot + Fresh Form Submission From ";
@@ -47,7 +62,6 @@ exports.emailDaddy = functions.https.onRequest(async (req, res) => {
     subject: (subjy += datInfo.name),
     text: bodyAssembly,
   };
-
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
       console.log(error);
