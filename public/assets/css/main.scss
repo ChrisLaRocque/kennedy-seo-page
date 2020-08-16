@@ -1,0 +1,206 @@
+// Media mixins
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin button-primary {
+  background-color: $base-white;
+  color: $base-black;
+  @include white-border;
+}
+@mixin button-secondary {
+  background-color: transparent;
+  color: $base-white;
+  @include white-border;
+}
+@mixin white-border {
+  border: 8px solid $base-white;
+}
+
+// Variables
+$base-black: #191b1e;
+$base-white: #d9dadb;
+@import "form.scss";
+@import "home.scss";
+// General element styles
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: $base-white;
+  background: $base-black;
+  background: center / cover no-repeat
+    url("../img/dark-paper-texture-high-res.jpg");
+  font-display: swap;
+}
+h1,
+h2,
+h3 {
+  font-family: "Roboto", Sans-Serif;
+  margin: 1vh 0;
+}
+h1 {
+  font-size: 4.8vh;
+}
+h2 {
+  font-size: 3.6vh;
+}
+h3 {
+  font-size: 3vh;
+}
+hr {
+  margin-bottom: 0.75vh;
+  border: 2px solid #d9dadb;
+}
+p {
+  font-family: "Droid Serif", Serif;
+  line-height: 3vh;
+  font-size: 2.4vh;
+  margin: 2vh 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Buttons
+button {
+  font-size: 2vh;
+  font-family: "Roboto", Sans-Serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1vh 1.2vh;
+  border-radius: 12px;
+
+  &.button-primary {
+    @include button-primary;
+  }
+  &.button-secondary {
+    @include button-secondary;
+  }
+}
+
+// Universal section styles
+section,
+header {
+  margin: 4vh;
+  @include for-phone-only {
+    margin: 0;
+  }
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include for-phone-only {
+    flex-direction: column;
+    h1 {
+      font-size: 4vh;
+      margin: 4vh;
+    }
+    .social-container {
+      margin-bottom: 2vh;
+    }
+  }
+}
+.social-container {
+  display: inline-block;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  padding: 0.5vh;
+  i {
+    vertical-align: middle;
+    &:hover {
+      &::before {
+        animation: bounce 1.2s 1 ease-out;
+      }
+    }
+    &::before {
+      font-size: 4vh;
+      margin: 1vh;
+      margin-left: 4vh;
+    }
+  }
+  .ks-logo {
+    display: none;
+    max-height: 8vh;
+    margin-left: 1vh;
+    vertical-align: middle;
+  }
+  @include for-phone-only {
+    margin-bottom: 2vh;
+  }
+}
+
+// Recording page
+#recording-studio {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(26, 27, 29, 0.95),
+      rgba(0, 0, 0, 0)
+    ),
+    url("../img/jesman-fabio-1zwJqd5cNys-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 4vh 0;
+  min-height: 72vh;
+  padding: 8vh 4vh;
+}
+@keyframes bounce {
+  // animation: bounce 1.2s 1 ease-out;
+  // 50% {
+  //   transform: translateY(-10px);
+  // }
+  10% {
+    transform: translateY(-10px);
+  }
+  20% {
+    transform: translateY(0px);
+  }
+  30% {
+    transform: translateY(-8px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  60% {
+    transform: translateY(0px);
+  }
+  70% {
+    transform: translateY(-4px);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+}
+/* background to white 1f2225 3f4144 616366 86888a adaeaf d5d6d6 ffffff */
+/* background to black */

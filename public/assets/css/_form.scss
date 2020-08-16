@@ -1,0 +1,103 @@
+#form {
+  margin: 6vh 4vh;
+  @include for-phone-only {
+    margin: 6vh 2vh;
+  }
+  @include for-tablet-portrait-up {
+    .form-container {
+      width: 75%;
+      display: inline-block;
+    }
+  }
+  .form-header {
+    margin: 4vh 0 0;
+  }
+  form {
+    padding: 2vh 0;
+
+    input,
+    label {
+      font-family: "Roboto", Sans-Serif;
+      font-size: 2.4vh;
+      font-weight: 700;
+      margin-bottom: 2vh;
+      border: 0;
+
+      vertical-align: top;
+      background-color: transparent;
+      color: $base-white;
+      @include for-tablet-portrait-up {
+        margin-right: 4vh;
+      }
+    }
+    input {
+      border-bottom: 2px solid $base-white;
+      padding: 1vh;
+    }
+    input[type="text"],
+    input[type="tel"] {
+      display: block;
+      width: 90%;
+    }
+    @include for-phone-only {
+      .button-secondary {
+        width: 100%;
+      }
+      .services {
+        margin: 2vh 0;
+      }
+    }
+
+    label {
+      vertical-align: bottom;
+    }
+    .button-secondary {
+      margin: 3vh 0;
+    }
+  }
+  #thanks-message {
+    display: none;
+  }
+  .checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid $base-white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 1vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+  }
+  .checkbox:active,
+  .checkbox:checked:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .checkbox:checked {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
+      inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    color: #99a1a7;
+  }
+  .checkbox:checked:after {
+    content: "\2714";
+    font-size: 4vh;
+    position: absolute;
+    top: -28px;
+    left: 3px;
+    color: $base-white;
+  }
+  .services,
+  .inputs {
+    display: inline-block;
+    vertical-align: top;
+    @include for-tablet-portrait-up {
+      width: 49%;
+    }
+  }
+}
